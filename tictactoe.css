@@ -1,0 +1,25 @@
+body {
+    background-color: darkkhaki;
+    justify-content: center;
+}
+div.table1{
+    margin: auto;
+    margin-top: 15em;
+    width: 15em;
+    height: 10em;
+    justify-items: center;
+}
+p {
+    background-color: darkred;
+    color: white;
+}
+table {
+    width: 7em;
+    height: 7em;
+}
+td {
+    width: 33%;
+    height: 33%;
+    border:1px solid black;
+    text-align: center;
+}
