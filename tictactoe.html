@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Tic-Tac-Toe</title>
         <link rel="stylesheet" href="tictactoe.css">
     </head>
 <body>
-    <div class="table1">
-    <p>Here is my Tic-Tac-Toe board.</p>
-    <table>
-        <!--Row 1-->
-        <tr>
-            <td>X</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <!--Row 2-->
-        <tr>
-            <td>O</td>
-            <td>X</td>
-            <td></td>
-        </tr>
-        <!--Row 3-->
-        <tr>
-            <td></td>
-            <td></td>
-            <td>O</td>
-        </tr>
-    </table>
-    </div>
+    <section>
+        <h1 class="intro">Welcome to Tic-Tac-Toe!</h1>
+        <div class="board">                      
+            <div id="0" class="box"></div>
+            <div id="1" class="box"></div>
+            <div id="2" class="box"></div>
+            <div id="3" class="box"></div>
+            <div id="4" class="box"></div>
+            <div id="5" class="box"></div>
+            <div id="6" class="box"></div>
+            <div id="7" class="box"></div>
+            <div id="8" class="box"></div>             
+        </div>
+        <h3 class="status"></h3>
+        <button id="reset" onclick="resetGame();">
+            RESTART
+        </button>
+    </section>
+    <script src="tictactoe.js"></script>
 </body>
 </html>
