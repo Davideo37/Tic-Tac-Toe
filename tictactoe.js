@@ -54,7 +54,7 @@ function handleMove(clickedBox) {
  */
 function checkWinner() {
     let roundWon = false;
-    // This part was orginally hard coded but Amos Cha helped me simplify it to a for loop
+    // This part was orginally hard coded but I found a tutorial that helped me simplify it to a for loop
     for (let i = 0; i < 8; i++) {
         const condition = winConditions[i];
         let box1 = boardState[condition[0]];
