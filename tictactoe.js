@@ -22,7 +22,7 @@ const winConditions = [ // Collection of all possible winning situations
 document.querySelectorAll(".box").forEach((box) => box.addEventListener("click", handleMove));
 
 /** Switches the current player from X to O or vice versa
- * 
+ *
  */
 function handlePlayerChange() {
     if (curPlayer === "X") {
@@ -34,14 +34,14 @@ function handlePlayerChange() {
 }
 
 /** Function to handle a box selection and update the board accordingly
- * 
+ *
  * @param clickedBox the box clicked on in the grid
  */
 function handleMove(clickedBox) {
     let box = clickedBox.target;
     let boxID = box.getAttribute("id");
     if (boardState[boxID] === "" && gameActive) { // Make sure the box is empty and nobody has won
-        boardState[boxID] = curPlayer; 
+        boardState[boxID] = curPlayer;
         box.innerHTML = curPlayer;
         checkWinner();
     }
@@ -49,12 +49,14 @@ function handleMove(clickedBox) {
 
 
 /** Function to check if a player has won, or draw has been reached
- * 
+ *
  * @returns null
  */
 function checkWinner() {
     let roundWon = false;
     // This part was orginally hard coded but I found a tutorial that helped me simplify it to a for loop
+    //RT Please site the exact tutorial (include the URL), not just "a tutorial"
+    // Since it was useful, share it, and record it for future reference.
     for (let i = 0; i < 8; i++) {
         const condition = winConditions[i];
         let box1 = boardState[condition[0]];
@@ -65,7 +67,7 @@ function checkWinner() {
             break;
         }
     }
-    
+
     if (roundWon === true) {
         gameStatus.innerHTML = (curPlayer + " has won!")
         gameActive = false;
@@ -81,7 +83,7 @@ function checkWinner() {
 }
 
 /** Resets the board for a new game
- * 
+ *
  */
 function resetGame() {
     curPlayer = "X"
