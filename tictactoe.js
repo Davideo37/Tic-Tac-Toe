@@ -21,6 +21,15 @@ const winConditions = [ // Collection of all possible winning situations
 // This line of code was based off a tutorial I watched at https://www.youtube.com/watch?v=Rzhcb4M9-0Q
 document.querySelectorAll(".box").forEach((box) => box.addEventListener("click", handleMove));
 
+document.querySelectorAll(".box").forEach((box) => box.addEventListener("keyup", function (event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        document.getElementById(box.id).click();
+    }
+}));
+
 /** Switches the current player from X to O or vice versa
  * 
  */
@@ -54,7 +63,7 @@ function handleMove(clickedBox) {
  */
 function checkWinner() {
     let roundWon = false;
-    // This part was orginally hard coded but Amos Cha helped me simplify it to a for loop
+    // This part was orginally hard coded but I found a tutorial that helped me simplify it to a for loop
     for (let i = 0; i < 8; i++) {
         const condition = winConditions[i];
         let box1 = boardState[condition[0]];
